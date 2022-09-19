@@ -5,6 +5,12 @@ on:
     branches:
       - main
       - bla/fasel
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    - cron: "15 6 * * 0"
 
 jobs:
   build:
@@ -12,7 +18,8 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: first step
+      -
+        name: first step
         run: echo "Hello world! - from the first step"
 
 
@@ -20,4 +27,7 @@ jobs:
     name: with spaces
     runs-on: ubuntu-latest
     steps:
-      - run: echo "my other job"
+      -
+        run: |
+          echo "my other job"
+          echo "${{ toJSON(github) }}"
