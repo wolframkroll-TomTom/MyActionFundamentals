@@ -27,5 +27,7 @@ jobs:
     name: with spaces
     runs-on: ubuntu-latest
     steps:
-      - run: echo '${{ toJSON(steps) }}'
+      - run: |
+          echo '${{ toJSON(steps) }}'
+          echo '${{ toJSON(runner) }}'
 
