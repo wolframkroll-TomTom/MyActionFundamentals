@@ -30,4 +30,3 @@ jobs:
       -
         run: |
           echo "my other job"
-          #echo '${{ toJSON(github) }}'
