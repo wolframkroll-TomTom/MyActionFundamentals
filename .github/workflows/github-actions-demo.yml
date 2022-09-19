@@ -1,11 +1,13 @@
 name: Wolfram's workflow
 
 on:
-  push
+  push:
+    branches:
+      - main
 
 jobs:
   build:
-    name: trying building
+    name: Build - just hello world.
     runs-on: ubuntu-latest
     
     steps:
