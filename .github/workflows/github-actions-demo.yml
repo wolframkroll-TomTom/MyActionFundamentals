@@ -13,7 +13,7 @@ jobs:
     
     steps:
       - name: first step
-      - run: echo "Hello world!"
+        run: echo "Hello world! - from the first step"
 
 
   other_job:
