@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - bla/fasel
 
 jobs:
   build:
@@ -12,4 +13,11 @@ jobs:
     
     steps:
       - name: first step
-        run: echo "Hello world!"
+      - run: echo "Hello world!"
+
+
+  other job:
+    name: with spaces
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "my other job"
