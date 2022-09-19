@@ -30,4 +30,5 @@ jobs:
       - run: |
           echo '${{ toJSON(steps) }}'
           echo '${{ toJSON(runner) }}'
+          echo '${{ toJSON(github.api_url) }}'
 
