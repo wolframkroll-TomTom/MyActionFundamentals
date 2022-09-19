@@ -1,0 +1,13 @@
+name: Wolfram's workflow
+
+on:
+  push
+
+jobs:
+  build:
+    name: trying building
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: first step
+        run: echo "Hello world!"
