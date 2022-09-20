@@ -1,2 +1,23 @@
 name: Reusable Workflow
 on: 
+  workflow_call:
+    inputs:
+      who-to-greet:
+        description: 'The person to be greeted'
+        type: string
+        required: true
+        default: World
+    outputs:
+      current-time:
+        description: 'The time of the greeting'
+        value: ${{ jobs.reusable-job.outputs.current-time}}
+
+jobs:
+  reusable-job:
+    runs-on: ubuntu-latest
+    steps:
+      - id: echo-job-1
+        run: echo "Hello ${{ inputs.who-to-greet }}"
+
+      - id: time
+        run: echo "::set-output name=current-time::$(date)"
