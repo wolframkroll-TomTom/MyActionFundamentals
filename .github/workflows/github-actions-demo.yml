@@ -31,4 +31,6 @@ jobs:
           echo '${{ toJSON(steps) }}'
           echo '${{ toJSON(runner) }}'
           echo '${{ toJSON(github.api_url) }}'
+      - run: |
+          echo '### Hello world! :rocket:' >> $GITHUB_STEP_SUMMARY
 
