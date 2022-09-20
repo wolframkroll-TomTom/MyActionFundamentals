@@ -32,5 +32,19 @@ jobs:
           echo '${{ toJSON(runner) }}'
           echo '${{ toJSON(github.api_url) }}'
       - run: |
-          echo '### Hello world! :rocket:' >> $GITHUB_STEP_SUMMARY
+          cat << EOT >> $GITHUB_STEP_SUMMARY
+          ### Hello world! :rocket:
+          
+          - some
+          - stuff
+          - in a
+          - list
+          
+          |t1 |h2 |h3 |
+          |---|---|---|
+          |bla | fasel | x |
+          |bla | blubber | x |
+          
+          The end of text.
+          EOT
 
